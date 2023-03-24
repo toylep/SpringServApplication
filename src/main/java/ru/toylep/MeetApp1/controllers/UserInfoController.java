@@ -9,11 +9,12 @@ import ru.toylep.MeetApp1.models.UserInfoModel;
 @RestController
 @RequestMapping("/user_info")
 public class UserInfoController {
+
     @Autowired
     private UserInfoDAO userInfoDAO;
     @PostMapping("/add")
-    public void addInfo( @RequestParam String group, @RequestParam String name, @RequestParam String lastname) {
-        userInfoDAO.addUserInfo( group, name, lastname);
+    public void addInfo() {
+        userInfoDAO.addUserInfo();
         //Long id,String name, String lastname, Long descriptions, Long comments
     }
         @GetMapping("/find/{id}")

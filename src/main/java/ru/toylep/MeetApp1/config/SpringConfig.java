@@ -28,7 +28,7 @@ public class SpringConfig {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/KursachDB1");
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/KursachDB2");
         dataSource.setUsername("postgres");
         dataSource.setPassword("228322");
         return dataSource;
@@ -43,4 +43,5 @@ public class SpringConfig {
     }
     @Bean
     public UserInfoDAO userInfoDAO(){return new UserInfoDAO(jdbcTemplate());}
+
 }

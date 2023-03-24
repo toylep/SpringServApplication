@@ -11,9 +11,9 @@ public class UserInfoDAO {
     public UserInfoDAO(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
-    public void addUserInfo(String group,String name, String lastname){
+    public void addUserInfo(){
            // Long id = jdbcTemplate.queryForObject("Select max(id) from \"UsersInfo\"");
-            jdbcTemplate.update("Insert into public.\"UsersInfo\"  (groups,name,\"lastName\",descriptions,comments) VALUES ( ?, ?, ?, ?, ?)", group, name, lastname);
+            jdbcTemplate.update("Insert into public.\"UsersInfo\"  () VALUES ( )");
         }
     public UserInfoModel findUserInfoById (Long id){
     return jdbcTemplate.query("SELECT * FROM public.\"UsersInfo\" where id=?",new Object[]{id},new UserInfoMapper()).stream().findAny().orElse(null);

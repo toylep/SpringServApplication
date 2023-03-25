@@ -9,5 +9,5 @@ public class DescriptionModel {
     private String teacherFIO;
     private String descriptionText;
     private String specLinks;
-    private String CommentID;
+    private Long CommentID;
 }

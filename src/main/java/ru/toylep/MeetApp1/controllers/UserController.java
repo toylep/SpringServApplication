@@ -30,4 +30,5 @@ public class UserController {
         userDAO.addUser(login,password);
         userInfoDAO.addUserInfo();
     }
+
 }

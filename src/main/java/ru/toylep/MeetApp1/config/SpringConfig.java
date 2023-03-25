@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import ru.toylep.MeetApp1.DAO.CommentDAO;
+import ru.toylep.MeetApp1.DAO.DescriptionDAO;
 import ru.toylep.MeetApp1.DAO.UserDAO;
 import ru.toylep.MeetApp1.DAO.UserInfoDAO;
 
@@ -43,5 +45,10 @@ public class SpringConfig {
     }
     @Bean
     public UserInfoDAO userInfoDAO(){return new UserInfoDAO(jdbcTemplate());}
+    @Bean
+    public CommentDAO commentDAO(){return new CommentDAO(jdbcTemplate());}
+    @Bean
+    public DescriptionDAO descriptionDAO(){return new DescriptionDAO(jdbcTemplate());}
+
 
 }
